@@ -120,11 +120,34 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AssetController.cs" />
+    <Compile Include="Controllers\AssetKontoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KontoAssetController.cs" />
+    <Compile Include="Controllers\TerminController.cs" />
+    <Compile Include="Controllers\TransaktionController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\UserViewModelController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Globals\GlobalD.cs" />
+    <Compile Include="Models\Asset.cs" />
+    <Compile Include="Models\AssetKonto.cs" />
+    <Compile Include="Models\JsonAsset.cs" />
+    <Compile Include="Models\KindOfAsset.cs" />
+    <Compile Include="Models\KontoAsset.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Termin.cs" />
+    <Compile Include="Models\Transaktion.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="mRoleProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\PassHandler.cs" />
+    <Compile Include="Services\Persistence.cs" />
+    <Compile Include="Services\ValueFetcher.cs" />
+    <Compile Include="ViewModels\KontoViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -135,6 +158,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="README.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -148,6 +172,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Services\jsonLayout.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -162,10 +187,32 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Details.cshtml" />
+    <Content Include="Views\User\Delete.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\Termin\Index.cshtml" />
+    <Content Include="Views\Termin\Details.cshtml" />
+    <Content Include="Views\Termin\Create.cshtml" />
+    <Content Include="Views\Termin\Edit.cshtml" />
+    <Content Include="Views\Termin\Delete.cshtml" />
+    <Content Include="Views\Asset\Index.cshtml" />
+    <Content Include="Views\Asset\Details.cshtml" />
+    <Content Include="Views\Asset\Create.cshtml" />
+    <Content Include="Views\Asset\Edit.cshtml" />
+    <Content Include="Views\KontoAsset\Details.cshtml" />
+    <Content Include="Views\KontoAsset\Create.cshtml" />
+    <Content Include="Views\KontoAsset\Index.cshtml" />
+    <Content Include="Views\AssetKonto\Index.cshtml" />
+    <Content Include="Views\AssetKonto\Details.cshtml" />
+    <Content Include="Views\AssetKonto\Create.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\IndexOLD.cshtml" />
+    <Content Include="Views\UserViewModel\UserView.cshtml" />
+    <Content Include="Views\Transaktion\Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

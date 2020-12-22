@@ -1,31 +1,119 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<div class="container">
+    <div class="jumbotron">
+        <h1>TradingSTATION</h1>
+        <p class="lead">Small Bitcoin TradingStation Application to Trade Bitcoins and train our skills.</p>
+        <p>
+            <a href="~/User/Create" class="btn btn-primary btn-lg">
+                Sign in &raquo;
+            </a>
+        </p>
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <div>
+            <div class="" id="CurrentBitcoinPrice">
+            </div>
+            <!--we get the current bitcoinprice with an AJAX-call -->
+
+        </div>
+        <!--<div class="bottomright" id="time"></div> -->
+        <!--<p class="bottomright2"> @DateTime.UtcNow.ToShortDateString() </p> -->
+
+    </div>
 </div>
+
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Trade</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            BLA BLa BLa BLA
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" href="/home/Anonym">click me &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Wallet</h2>
+        <p>Aktuelles Wallet</p>
+        <p><a class="btn btn-default" href="/home/Wallet">click me &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
+        <h2>History</h2>
         <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
+
+
+<style>
+    .container {
+        position: relative;
+    }
+
+    .bottomright {
+        position: absolute;
+        bottom: 24px;
+        right: 16px;
+        font-size: 18px;
+    }
+
+    .bottomright2 {
+        position: absolute;
+        bottom: 8px;
+        font-size: 18px;
+    }
+
+    .Topright {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 18px;
+    }
+</style>
+
+<script>
+
+
+    function getJSONresult() {
+
+    // why i should help u :D ? find by your own what my code do :O
+    // Code was hart zum schreiben war.. muss auch hart zum lesen sein
+            setTimeout(function () { getJSONresult();},5000);
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+
+                    var JsonResult = this.responseText;
+                    var globalCountries = JSON.parse(JsonResult);
+                    document.getElementById("CurrentBitcoinPrice").innerHTML = globalCountries.bpi["EUR"].rate;;
+                }
+            };
+            xhttp.open("GET", "https://api.coindesk.com/v1/bpi/currentprice.json", true);
+            xhttp.send();
+        }
+    getJSONresult();
+
+
+function checkTime(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}
+
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  // add a zero in front of numbers<10
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+  t = setTimeout(function() {
+    startTime()
+  }, 500);
+}
+startTime();
+</script>

@@ -1,0 +1,26 @@
+﻿@model TradingStation.Models.AssetKonto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AssetKonto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KontoArt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KontoArt)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AssetKontoID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

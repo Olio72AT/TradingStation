@@ -1,0 +1,49 @@
+﻿@model TradingStation.Models.Termin
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Termin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TerminReminder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TerminReminder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TerminPriority)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TerminPriority)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TerminId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

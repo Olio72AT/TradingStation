@@ -1,0 +1,41 @@
+﻿@model TradingStation.ViewModels.UserViewModel
+
+@{
+    ViewBag.Title = "Trading-Account" + Model.FullName;
+}
+
+<h2>Trading-Account</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eMail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eMail)
+        </dd>
+
+    </dl>
+
+    <p>Ihre Konten:</p>
+
+    @* TODO: PartialViews einbinden für Konten *@
+
+    <p>Ihre Termine:</p>
+
+    @* TODO: PartialViews einbinden für Termine *@
+
+</div>
+<p>
+
+</p>
